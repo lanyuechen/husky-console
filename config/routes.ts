@@ -28,6 +28,12 @@
     component: './Category',
   },
   {
+    name: '资源管理',
+    icon: 'DatabaseOutlined',
+    path: '/resource',
+    component: './Resource',
+  },
+  {
     path: '/',
     redirect: '/dashboard',
   },

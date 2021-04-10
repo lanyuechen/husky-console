@@ -1,5 +1,5 @@
 import { PlusOutlined } from '@ant-design/icons';
-import { Button, message, Drawer, Modal } from 'antd';
+import { Button, message, Drawer, Modal, Tooltip } from 'antd';
 import { FormOutlined, FileTextOutlined, DeleteOutlined } from '@ant-design/icons';
 import React, { useState, useRef } from 'react';
 import { FooterToolbar } from '@ant-design/pro-layout';
@@ -32,9 +32,11 @@ export default function<T = any>(props: TableListProps<T>) {
 
   const prepareOption = (key: any, record: any) => {
     return (
-      <a key={key} onClick={() => handleOption(key, record)}>
-        {icons[key]}
-      </a>
+      <Tooltip title={{detail: '详情', edit: '编辑', remove: '删除'}[key]}>
+        <a key={key} onClick={() => handleOption(key, record)}>
+          {icons[key]}
+        </a>
+      </Tooltip>
     );
   }
 
