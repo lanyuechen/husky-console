@@ -32,8 +32,8 @@ export default function<T = any>(props: TableListProps<T>) {
 
   const prepareOption = (key: any, record: any) => {
     return (
-      <Tooltip title={{detail: '详情', edit: '编辑', remove: '删除'}[key]}>
-        <a key={key} onClick={() => handleOption(key, record)}>
+      <Tooltip key={key} title={{detail: '详情', edit: '编辑', remove: '删除'}[key]}>
+        <a onClick={() => handleOption(key, record)}>
           {icons[key]}
         </a>
       </Tooltip>
